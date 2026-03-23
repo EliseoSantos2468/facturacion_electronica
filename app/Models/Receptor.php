@@ -14,6 +14,8 @@ class Receptor extends Model{
         'nombre_razon_social',
         'nrc',
         'actividad_economica_codigo', //fk
+        'departamento_codigo', //fk
+        'municipio_codigo', //fk
         'correo_electronico' 
     ];  
     public function tipoDocumento(){
@@ -24,5 +26,14 @@ class Receptor extends Model{
     }
     public function actividadEconomica(){
         return $this->belongsTo(CatActividadEconomica::class, 'actividad_economica_codigo', 'codigo_actividad');
+    }
+    public function departamento()
+    {
+        return $this->belongsTo(CatDepartamento::class, 'departamento_codigo', 'departamento_codigo');
+    }
+
+    public function municipio()
+    {
+        return $this->belongsTo(CatMunicipio::class, 'municipio_codigo', 'municipio_codigo');       
     }
 }
