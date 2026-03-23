@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('eventos_invalidacion', function (Blueprint $table) {
+            $table->id('invalidacion_id');
+            $table->unsignedBigInteger('documento_id');
+            $table->unsignedBigInteger('motivo_invalidacion_codigo');
+            $table->timestamp('fecha_generacion'); 
+            $table->string('sello_recepcion_invalidacion', 40)->nullable();
+            $table->timestamps();
+            
+            $table->foreign('documento_id')
+                ->references('documento_id')
+                ->on('dte_documentos');
+
+            $table->foreign('motivo_invalidacion_codigo')
+                ->references('m_motivo_codigo')
+                ->on('cat_motivo_invalidacion');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('eventos_invalidacion');
+    }
+};
