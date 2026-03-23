@@ -19,9 +19,9 @@ class DteDetalle extends Model{
         'ventas_no_sujetas'
     ];
     public function documento(){
-        return $this->belongsTo(DteDocumento::class, 'documento_id');
+        return $this->belongsTo(DteDocumento::class, 'documento_id', 'documento_id');
     }   
     public function producto(){
-        return $this->belongsTo(Producto::class, 'producto_id');
+        return $this->belongsTo(Producto::class, 'producto_id', 'producto_id');
     }
 }
