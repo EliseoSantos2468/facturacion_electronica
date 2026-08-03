@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('certificado_firmas');
+        Schema::dropIfExists('certificado_firma');
     }
 };

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('cantidad', 16, 2);
             $table->decimal('precio_unitario', 16, 2);
             $table->decimal('monto_descuento', 16, 2)->default(0);
-            $table->decimal('ventas_nosujetas', 16, 2)->default(0); 
+            $table->decimal('ventas_no_sujetas', 16, 2)->default(0);
             $table->decimal('ventas_exentas', 16, 2)->default(0);
             $table->decimal('ventas_gravadas', 16, 2)->default(0);
             $table->timestamps();

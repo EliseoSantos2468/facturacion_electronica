@@ -21,14 +21,14 @@ class DteDocumento extends Model{
         'receptor_id'
     ];
 
-    public function tipo_dte()
+    public function tipoDte()
     {
         return $this->belongsTo(CatTipoDte::class, 'tipo_dte_codigo', 'codigo_tipo_documento');
     }
-    public function estado_dte()
+    public function estadoDte()
     {
         return $this->belongsTo(EstadoDte::class, 'estado_dte', 'estado_dte_id');
-    }   
+    }
 
     public function emisor()
     {

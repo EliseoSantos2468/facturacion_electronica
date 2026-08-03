@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Permiso extends Model
 {
     protected $table = 'permisos';
-    protected $primaryKey = 'permsiso_id';
+    protected $primaryKey = 'permiso_id';
     protected $fillable = ['nombre', 'descripcion'];
 
     public function roles()
